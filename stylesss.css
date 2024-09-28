@@ -1,0 +1,234 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 60px 20px;
+    margin-bottom: 50px;
+    position: relative;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    font-family: 'Roboto Slab', serif;
+    animation: fadeIn 2s ease;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.3em;
+    animation: fadeIn 3s ease;
+}
+
+/* Dashboard Menu Styling */
+.dashboard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu-toggle {
+    font-size: 2em;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    animation: fadeIn 1.5s ease;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0 15px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.1em;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s, transform 0.3s;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffd740;
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.menu a:hover {
+    color: #ffd740;
+    transform: translateY(-5px);
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Section Styles */
+section {
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+section:hover {
+    transform: translateY(-15px);
+    box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+section h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #ffd740;
+    font-family: 'Roboto Slab', serif;
+}
+
+.introduction, .skills, .projects, .contact {
+    animation: slideIn 2s ease;
+}
+
+.introduction p, .skills ul, .projects ul, .contact p {
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.skills ul, .projects ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills li, .projects li {
+    font-size: 1.3em;
+    padding: 10px 0;
+    position: relative;
+    animation: grow 1.5s ease;
+}
+
+.skills li::before, .projects li::before {
+    content: "◆";
+    position: absolute;
+    left: -25px;
+    color: #ffd740;
+    font-size: 1.5em;
+}
+
+/* Contact Section */
+.contact a {
+    color: #ffd740;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #ffd740;
+}
+
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 60px;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu a {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
